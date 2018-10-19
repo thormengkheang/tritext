@@ -1,30 +1,27 @@
-module.exports = () => {
-  const process = require("process");
-  const input = process.argv[2];
-  const cleanInput = input.replace(/ /g, "").toUpperCase();
+const process = require("process");
+const minimist = require("minimist");
 
-  console.log("");
-  console.log(
-    "="
-      .repeat(cleanInput.length)
-      .split("")
-      .join(" ")
-  );
-  console.log("");
-  for (let i = 0; i < cleanInput.length; i++) {
-    console.log(
-      cleanInput
-        .substring(0, cleanInput.length - i)
-        .split("")
-        .join(" ")
-    );
+module.exports = () => {
+  const args = minimist(process.argv.slice(2));
+  let cmd = args._[0] || "help";
+
+  if (args.version || args.v) {
+    cmd = "version";
   }
-  console.log("");
-  console.log(
-    "="
-      .repeat(cleanInput.length)
-      .split("")
-      .join(" ")
-  );
-  console.log("");
+
+  if (args.help || args.h) {
+    cmd = "help";
+  }
+
+  switch (cmd) {
+    case "version":
+      require("./version")(args);
+      break;
+    case "help":
+      require("./help")(args);
+      break;
+    default:
+      require("./tritext")(args);
+      break;
+  }
 };
