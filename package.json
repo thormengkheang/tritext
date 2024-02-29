@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/thormengkheang/tritext/issues"
   },
-  "homepage": "https://github.com/thormengkheang/tritextt#readme",
+  "homepage": "https://github.com/thormengkheang/tritext#readme",
   "bin": {
     "tritext": "bin/tritext"
   },
