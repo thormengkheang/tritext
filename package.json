@@ -2,6 +2,15 @@
   "name": "tritext-cli",
   "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thormengkheang/tritext.git"
+  },
+  "author": "Thor Mengkheang",
+  "bugs": {
+    "url": "https://github.com/thormengkheang/tritext/issues"
+  },
+  "homepage": "https://github.com/thormengkheang/tritextt#readme",
   "bin": {
     "tritext": "bin/tritext"
   },
